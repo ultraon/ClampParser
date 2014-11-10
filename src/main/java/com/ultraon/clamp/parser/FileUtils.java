@@ -14,4 +14,8 @@ public class FileUtils {
         return new File(dirPath).isDirectory();
     }
 
+    public static boolean mkdir(final String dirPath) {
+        return new File(dirPath).mkdirs();
+    }
+
 }

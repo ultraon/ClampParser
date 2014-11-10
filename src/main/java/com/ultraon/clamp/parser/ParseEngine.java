@@ -27,7 +27,7 @@ public class ParseEngine {
         final Serializer serializer = getSerializer();
         Clamp clamp = serializer.read(Clamp.class, new File(filePath));
 
-        //TODO stopped here, need create dir structure and save data with appropriate format
+        new ClampSaver().save(clamp, filePath);
     }
 
     private Serializer getSerializer() {

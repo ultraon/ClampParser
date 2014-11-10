@@ -9,12 +9,12 @@ public class Application {
     public static void main(String[] args) {
 //        System.out.println("length: " + TMP.split(",").length);
 
-        System.out.println("args: " + args[0]);
-
         if (args.length == 0 || !FileUtils.isExistFile(args[0])) {
             System.out.println("Input clamp xml file path to the first arg");
             System.exit(1);
         }
+
+        System.out.println("args: " + args[0]);
 
         try {
             new ParseEngine(args[0]).execute();

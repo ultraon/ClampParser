@@ -1,0 +1,5 @@
+target/classes/com/ultraon/clamp/parser/FileUtils.class
+target/classes/com/ultraon/clamp/parser/ParseEngine.class
+target/classes/com/ultraon/clamp/parser/model/Clamp.class
+target/classes/com/ultraon/clamp/parser/model/Reading.class
+target/classes/com/ultraon/clamp/parser/model/Scan.class
