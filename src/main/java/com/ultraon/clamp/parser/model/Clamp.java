@@ -1,8 +1,10 @@
 package com.ultraon.clamp.parser.model;
 
 import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -18,8 +20,8 @@ public class Clamp {
     private String name = "";
     @Attribute
     private Date created;
-
-    private List<Reading> readings = Collections.emptyList();
+    @ElementList
+    private List<Reading> readings = new ArrayList<Reading>();
 
     public List<Reading> getReadings() {
         return readings;

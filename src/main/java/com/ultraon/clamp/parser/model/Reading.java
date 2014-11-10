@@ -1,11 +1,11 @@
 package com.ultraon.clamp.parser.model;
 
 import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
-import org.simpleframework.xml.Text;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,12 +20,12 @@ public class Reading {
     private Date created;
     @Attribute
     private boolean basedOnPreviousResult;
-    @Text
+    @Element
     private String productType = "";
-    @Text
+    @Element
     private String spectrometer = "";
     @ElementList
-    private List<Scan> scans = Collections.emptyList();
+    private List<Scan> scans = new ArrayList<Scan>();
 
     public String getId() {
         return id;

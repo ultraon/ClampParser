@@ -26,6 +26,8 @@ public class ParseEngine {
     public void execute() throws Exception {
         final Serializer serializer = getSerializer();
         Clamp clamp = serializer.read(Clamp.class, new File(filePath));
+
+        //TODO stopped here
     }
 
     private Serializer getSerializer() {
