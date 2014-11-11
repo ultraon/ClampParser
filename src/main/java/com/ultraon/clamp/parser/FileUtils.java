@@ -1,6 +1,7 @@
 package com.ultraon.clamp.parser;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by vitaliypopov on 10.11.14.
@@ -18,4 +19,8 @@ public class FileUtils {
         return new File(dirPath).mkdirs();
     }
 
+
+    public static void deleteDirectory(final String dirPath) throws IOException {
+        org.apache.commons.io.FileUtils.deleteDirectory(new File(dirPath));
+    }
 }

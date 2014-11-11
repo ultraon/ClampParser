@@ -6,6 +6,8 @@ import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 import org.simpleframework.xml.transform.RegistryMatcher;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -18,16 +20,19 @@ import java.util.Locale;
 public class ParseEngine {
     private static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS";
     private String filePath;
+    private String dirPath;
 
-    public ParseEngine(String filePath) {
+    private ISaver<Clamp> saver = new ClampSaver();
+
+    public ParseEngine(@Nonnull String filePath, @Nullable final String targetDirPath) {
         this.filePath = filePath;
+        this.dirPath = targetDirPath;
     }
 
     public void execute() throws Exception {
         final Serializer serializer = getSerializer();
-        Clamp clamp = serializer.read(Clamp.class, new File(filePath));
-
-        new ClampSaver().save(clamp, filePath);
+        final Clamp clamp = serializer.read(Clamp.class, new File(filePath));
+        saver.save(clamp, dirPath);
     }
 
     private Serializer getSerializer() {

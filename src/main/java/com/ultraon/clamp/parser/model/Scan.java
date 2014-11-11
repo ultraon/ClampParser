@@ -3,7 +3,6 @@ package com.ultraon.clamp.parser.model;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
-import org.simpleframework.xml.Text;
 
 /**
  * Created by vitaliypopov on 10.11.14.
